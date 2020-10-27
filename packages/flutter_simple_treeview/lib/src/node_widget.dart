@@ -36,8 +36,11 @@ class _NodeWidgetState extends State<NodeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var icon =
-        _isLeaf ? null : _isExpanded ? Icons.expand_more : Icons.chevron_right;
+    var icon = _isLeaf
+        ? null
+        : _isExpanded
+            ? Icons.expand_more
+            : Icons.chevron_right;
 
     var onIconPressed = _isLeaf
         ? null
@@ -45,6 +48,7 @@ class _NodeWidgetState extends State<NodeWidget> {
             () => widget.state.toggleNodeExpanded(widget.treeNode.key));
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
